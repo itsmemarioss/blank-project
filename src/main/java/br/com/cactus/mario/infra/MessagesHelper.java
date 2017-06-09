@@ -6,11 +6,11 @@ import javax.inject.Inject;
 
 public class MessagesHelper {
 
-	@Inject
-	private FacesContext facesContext;
-	
-	public void addFlash(FacesMessage message){
-		facesContext.getExternalContext().getFlash().setKeepMessages(true);
-		facesContext.addMessage(null, message);
-	}
+    @Inject
+    private FacesContext facesContext;
+
+    public void addFlash(FacesMessage message) {
+        facesContext.getExternalContext().getFlash().setKeepMessages(true);
+        facesContext.addMessage(null, message);
+    }
 }

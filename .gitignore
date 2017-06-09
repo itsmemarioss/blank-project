@@ -2,3 +2,7 @@
 .project
 .settings
 target/
+
+nb-configuration.xml
+esicduo.iml
+.idea/*

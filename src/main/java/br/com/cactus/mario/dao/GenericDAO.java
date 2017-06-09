@@ -1,29 +1,34 @@
 package br.com.cactus.mario.dao;
 
+import br.com.cactus.mario.transaction.Transacional;
 import java.util.Optional;
+import javax.inject.Inject;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
-public abstract class GenericDAO<E,I> {
-	
-	@PersistenceContext
-	EntityManager entityManager;
-	private final Class<E> entityClass;
-	
-	public GenericDAO(Class clazz){
-		entityClass = clazz;
-	}
-	
-	public void salvar(E entity){
-		entityManager.persist(entity);
-	}
-	
-	public E atualizar(E entity){
-		return entityManager.merge(entity);
-	}
-	
-	public Optional<E> buscar(I id){
-		return Optional.ofNullable(entityManager.find(entityClass, id));
-	}
+public abstract class GenericDAO<E, K> {
+
+    @Inject
+    EntityManager entityManager;
+    private final Class<E> entityClass;
+
+    public GenericDAO(Class clazz) {
+        entityClass = clazz;
+    }
+
+    @Transacional
+    public void salvar(E entity) {
+        entityManager.persist(entity);
+    }
+
+    @Transacional
+    public E atualizar(E entity) {
+        return entityManager.merge(entity);
+    }
+
+    @Transacional
+    public Optional<E> buscar(K id) {
+        return Optional.ofNullable(entityManager.find(entityClass, id));
+    }
+    
 }
