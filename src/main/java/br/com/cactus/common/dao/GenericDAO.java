@@ -1,4 +1,4 @@
-package br.com.cactus.mario.dao;
+package br.com.cactus.common.dao;
 
 import java.util.Optional;
 

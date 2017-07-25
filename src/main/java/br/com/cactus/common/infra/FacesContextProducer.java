@@ -1,4 +1,4 @@
-package br.com.cactus.mario.infra;
+package br.com.cactus.common.infra;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;

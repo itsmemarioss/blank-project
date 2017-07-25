@@ -1,4 +1,4 @@
-package br.com.cactus.mario.controller;
+package br.com.cactus.blank.controller;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -6,7 +6,7 @@ import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 
-import br.com.cactus.mario.infra.MessagesHelper;
+import br.com.cactus.common.infra.MessagesHelper;
 
 @Model
 public class IndexBean {
