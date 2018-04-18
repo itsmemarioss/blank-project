@@ -45,7 +45,9 @@
 						</h:column>			
 					</h:dataTable>
 					
-					<h:commandButton action="/relatorios/pessoas" value="relatorio" />
+					<h:outputLink value="#{request.contextPath}/relatorios/pessoas">
+						Relatorio
+					</h:outputLink>
 				</h:form>
 			</ui:define>
 		
