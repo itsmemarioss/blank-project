@@ -4,7 +4,7 @@
 		<description>Dev persistence unit</description>
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<!-- datasource already set in wildfly -->
-		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+		<jta-data-source>java:/ufca/blankproject</jta-data-source>
 		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
