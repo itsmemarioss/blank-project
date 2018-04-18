@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+     
+
+	<h:body>
+	
+		<ui:composition template="./layout.xhtml">
+			
+			<ui:define name="page-header">
+        <h1>Lista de Pessoas</h1>
+			</ui:define>
+			
+			<ui:define name="body">
+				<h:form>
+				
+					<h:dataTable styleClass="table table-bordered" value="#{pessoaBean.lista}" var="pessoa" >
+						<h:column>
+							<f:facet name="header">Nome</f:facet>
+							#{pessoa.nome}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Email</f:facet>
+							#{pessoa.email}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Telefone</f:facet>
+							#{pessoa.telefone}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Sexo</f:facet>
+							#{pessoa.sexo}
+						</h:column>
+						<h:column>
+							<h:commandButton action="#{pessoaBean.editar()}" value="Editar">
+								<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
+							</h:commandButton>
+						</h:column>
+						<h:column>
+							<h:commandButton action="#{pessoaBean.remover()}" value="Excluir">
+								<f:setPropertyActionListener value="#{pessoa}" target="#{pessoaBean.pessoa}"/>
+							</h:commandButton>
+						</h:column>			
+					</h:dataTable>
+					
+					<h:commandButton action="/relatorios/pessoas" value="relatorio" />
+				</h:form>
+			</ui:define>
+		
+		</ui:composition>
+		
+	</h:body>
+
+</html>
